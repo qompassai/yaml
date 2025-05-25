@@ -6,8 +6,8 @@
 
 <h3> Qompass AI on YAML </h3>
 
-![Repository Views](https://komarev.com/ghpvc/?username=qompassai-yml)
-![GitHub all releases](https://img.shields.io/github/downloads/qompassai/yml/total?style=flat-square)
+![Repository Views](https://komarev.com/ghpvc/?username=qompassai-yaml)
+![GitHub all releases](https://img.shields.io/github/downloads/qompassai/yaml/total?style=flat-square)
   <a href="https://yaml.org/">
   <img src="https://img.shields.io/badge/YAML-000000?style=for-the-badge&logo=yaml&logoColor=white" alt="YAML">
 </a>

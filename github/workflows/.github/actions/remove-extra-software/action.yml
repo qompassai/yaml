@@ -1,0 +1,24 @@
+
+name: "Remove extra software"
+description: Removes unused software to increase available disk space for the Dioptra build process.
+
+runs:
+  using: "composite"
+  steps:
+    - name: Remove dotnet, Android SDK, and Haskell
+      run: |
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /usr/local/lib/android
+        sudo rm -rf /opt/ghc
+      shell: bash
+
+    - name: Disk space report
+      shell: bash
+      run: |
+        echo "Memory and swap:"
+        free
+        echo
+        swapon --show
+        echo
+        echo "Available storage:"
+        df -h
