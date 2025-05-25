@@ -1,0 +1,12 @@
+# /qompassai/yaml/sops/sops
+# ----------------------------
+# Copyright (C) 2025 Qompass AI, All rights reserved
+
+cat > ~/.sops.yaml <<EOF
+creation_rules:
+  - path_regex: .*\.(yaml|yml|json)$
+    encrypted_regex: ^(data|stringData|password|secret|key|token|cert|private)$
+    pgp: ${KEY_FP}
+  - path_regex: .*\.env$
+    pgp: ${KEY_FP}
+EOF
