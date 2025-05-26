@@ -5,7 +5,13 @@
 creation_rules:
   - path_regex: 'Ansible/.*\.(yml|yaml|json)$'
     encrypted_regex: '^(vault_.*|ansible_.*|.*password.*|.*secret.*|.*key.*|.*token.*)$'
-    pgp: 0x4F8B914D6026570F
+    age: age16m00sdfxgu0xtugpmd7lngdkwdw89sh6uw27c0p5gkk7wyslav6qznn27t
+
+  - path_regex: '\.ansible/.*\.(yml|yaml|json)$'
+    age: age16m00sdfxgu0xtugpmd7lngdkwdw89sh6uw27c0p5gkk7wyslav6qznn27t
+
+  - path_regex: '\.ansible/scripts/.*\.(sh|bash|zsh)$'
+    age: age16m00sdfxgu0xtugpmd7lngdkwdw89sh6uw27c0p5gkk7wyslav6qznn27t
 
   - path_regex: '.*\.key$'
     pgp: 0x4F8B914D6026570F
