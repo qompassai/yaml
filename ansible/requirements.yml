@@ -1,9 +1,0 @@
-# /qompassai/yaml/ansible/requirements.yml
-# -------------------------------------------
-# Copyright (C) 2025 Qompass AI, All rights reserved
-
----
-collections:
-  - name: community.general
-  - name: ansible.posix
-  - name: community.crypto
