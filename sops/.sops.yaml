@@ -1,0 +1,88 @@
+# ~/qompassai/yaml/sops/sops.yaml
+# --------------------------
+# Copyright (C) 2025 Qompass AI, All rights reserved
+
+creation_rules:
+  - path_regex: 'Ansible/.*\.(yml|yaml|json)$'
+    encrypted_regex: '^(vault_.*|ansible_.*|.*password.*|.*secret.*|.*key.*|.*token.*)$'
+    age: age16m00sdfxgu0xtugpmd7lngdkwdw89sh6uw27c0p5gkk7wyslav6qznn27t
+
+  - path_regex: '\.ansible/.*\.(yml|yaml|json)$'
+    age: age16m00sdfxgu0xtugpmd7lngdkwdw89sh6uw27c0p5gkk7wyslav6qznn27t
+
+  - path_regex: '\.ansible/scripts/.*\.(sh|bash|zsh)$'
+    age: age16m00sdfxgu0xtugpmd7lngdkwdw89sh6uw27c0p5gkk7wyslav6qznn27t
+
+  - path_regex: '.*\.key$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.(key|crt|pem|p12|pfx|cer|der|csr|pub|asc|gpg)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.(ini|conf|config)$'
+    encrypted_regex: '^(password|secret|key|token|.*pass.*|.*cred.*|.*auth.*).*'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*(mysql|mariadb|psql)\.conf$'
+    encrypted_regex: '^(password|.*_password|ssl_.*|.*secret.*|.*key.*).*'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*[Dd]ockerfile.*$'
+    encrypted_regex: '^(.*PASSWORD.*|.*SECRET.*|.*KEY.*|.*TOKEN.*)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.enc\.(yaml|yml|json|env|toml|nix|ini|conf|txt|key|crt|pem)$'
+    encrypted_regex: '^(data|stringData|secrets|values|env|password|.*secret.*|.*key.*|.*token.*)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.env$'
+    encrypted_regex: '^(.*PASSWORD.*|.*SECRET.*|.*KEY.*|.*TOKEN.*|.*API_.*|.*AUTH_.*)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.(gpg|asc|sig|pgp)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: 'k8s/.*\.(yaml|yml)$'
+    encrypted_regex: '^(data|stringData|password|.*secret.*|.*key.*|.*token.*)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.nix$'
+    encrypted_regex: '^(.*password.*|.*secret.*|.*key.*|.*token.*).*'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.(py|js|ts|jsx|tsx|go|rs|java|scala|lua|sh|bash|zsh)$'
+    encrypted_regex: '^(.*PASSWORD.*|.*SECRET.*|.*API_KEY.*|.*TOKEN.*|.*CREDENTIAL.*)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*/postfix.*/(sasl_passwd|relayhost_maps|virtual|main\.cf|.*\.cf)$'
+    pgp: 0x4F8B914D6026570F
+    
+  - path_regex: '.*(sasl_passwd|postfix.*|mail.*)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '^\.ssh/.*$'
+    age: age16m00sdfxgu0xtugpmd7lngdkwdw89sh6uw27c0p5gkk7wyslav6qznn27t
+
+  - path_regex: '.*/certs?/.*\.(key|crt|pem|p12|pfx)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.(tf|tfvars)$'
+    encrypted_regex: '^(.*password.*|.*secret.*|.*key.*|.*token.*|.*credential.*)$'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.(txt|md|markdown)$'
+    encrypted_regex: '^(password|secret|key|token|credential|api.*).*'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*valkey\.conf$'
+    encrypted_regex: '^(requirepass|.*password.*|.*secret.*|.*key.*|.*token.*|auth-.*).*'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*(nginx|apache)\.conf$'
+    encrypted_regex: '^(ssl_.*|auth_.*|.*password.*|.*secret.*|.*key.*).*'
+    pgp: 0x4F8B914D6026570F
+
+  - path_regex: '.*\.(yaml|yml|json|toml)$'
+    encrypted_regex: '^(data|stringData|password|secret|key|token|.*pass.*|.*cred.*|.*auth.*|.*api.*)$'
+    pgp: 0x4F8B914D6026570F
+

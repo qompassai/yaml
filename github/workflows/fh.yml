@@ -1,0 +1,29 @@
+# /qompassai/yaml/github/workflows/fh.yml
+# ---------------------------------------
+# Copyright (C) 2025 Qompass AI, All rights reserved
+
+name: Publish to FlakeHub
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  flakehub-publish:
+    runs-on: [self-hosted, Linux, X64]
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - uses: DeterminateSystems/flakehub-push@main
+        with:
+          name: youruser/yourrepo
+          rolling: true
+          visibility: public
+

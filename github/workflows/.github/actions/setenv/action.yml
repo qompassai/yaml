@@ -1,0 +1,15 @@
+
+name: "Set environment variables"
+description: Adds environment variables from one or more .env files into the workflow environment.
+inputs:
+  env-path:
+    description: "File path to one or more .env files. The default is ./.github/env/**/*.env."
+    required: false
+    default: ./.github/env/**/*.env
+
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        sed "/^#/d" ${{ inputs.env-path }} >> $GITHUB_ENV
+      shell: bash
